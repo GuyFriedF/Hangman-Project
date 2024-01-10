@@ -1,0 +1,22 @@
+import nltk
+import random
+
+# Download the words dataset (if not already downloaded)
+nltk.download('words')
+
+#Word Generation
+def generate_random_word():
+    # Get the list of English words
+    word_list = nltk.corpus.words.words()
+
+    # Filter out words longer than 6 letters
+    valid_words = [word for word in word_list if len(word) == 6]
+
+    # Choose a random word from the filtered list
+    random_word = random.choice(valid_words)
+
+    return random_word
+
+# Game
+random_word = generate_random_word()
+word = random_word
